@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: flax;
+ }
+
+ html,
+body{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    background: rgb(29, 31, 68);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.image-wrapper {
+    flex: 1 1 calc(100% - 20px); /* Faz com que cada div ocupe 100% da largura menos o espaçamento */
+    box-sizing: border-box;
+    max-width: calc(50% - 20px); /* Limita a largura máxima a 50% menos o espaçamento */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Media Queries */
+
+/* Para telas menores que 1024px */
+@media (max-width: 1024px) {
+    .image-wrapper {
+        flex: 1 1 calc(50% - 20px); /* Ocupa 50% da largura menos o espaçamento */
+        max-width: 100%; /* Define o máximo de largura para 100% */
+    }
+}
+
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    .image-wrapper {
+        flex: 1 1 100%; /* Ocupa 100% da largura */
+        max-width: 100%;
+    }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+    .image-wrapper {
+        flex: 1 1 100%; /* Ocupa 100% da largura */
+        padding: 0; /* Remove qualquer padding */
+    }
+
+    .container {
+        gap: 10px; /* Reduz o espaçamento entre as divs */
+    }
+}
